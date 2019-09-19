@@ -42,7 +42,9 @@ class App extends React.Component {
         .then(data => this.setState({
           data:data,
         }));
+    }
 
+    if(this.state.dataset !== "") {
       fetch("/link", {
           method: "POST",
           body: JSON.stringify({
