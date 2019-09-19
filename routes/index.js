@@ -37,10 +37,10 @@ function getHistory(fnCBK, errCBK) {
     });
 }
 
-router.get('/history', (req, res) => {
+router.get('/link', (req, res) => {
 
   function fnCBK(data) {
-    res.send(data);
+    res.json(data);
   }
 
   function errCBK(err) {
@@ -54,28 +54,19 @@ router.get('/history', (req, res) => {
 function postLink(new_link, fnCBK, errCBK) {
   history.insertOne(new_link, (err,res) => {
     if(err) {
-      errCBK(err);
-      return;
+      throw err;
     }
 
     console.log(new_link+'inserted');
-    fnCBK('Usuario agregado con exito');
   });
 }
 
-router.post('/history', (req, res) => {
+router.post('/link', (req, res) => {
 
-  var new_link =req.body.link;
+  var new_link = req.body;
 
-  function fnCBK(data) {
-    res.send(data);
-  }
-
-  function errCBK(err) {
-    res.send(err);
-  }
-
-  postLink(new_link, fnCBK, errCBK);
+  postLink(new_link);
+  res.send("Ok");
 });
 
 module.exports = router;
