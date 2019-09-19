@@ -73,7 +73,7 @@ Abra su cmd y clone el repositorio usando el siguiente comando:
 La base de datos se encuentra hosteada en el cloud de MongoDB (Atlas).
 
 # Screenshots
-![alt text](http://url/to/img.png)
+![alt text](https://66.media.tumblr.com/cc09fea86efb61734e9f0d89efaece12/tumblr_py2jbo5fFl1srjdm2o1_540.png)
 
 # Autor
 María José Ocampo Vargas - https://github.com/mjocampov
