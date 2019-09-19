@@ -1,10 +1,17 @@
 # Datos.gov
 Aplicación web que le permita al usuario visualizar un dataset de https://datos.gov.co usando navio.
+La aplicación se encuentra desplegada en heroku:  https://murmuring-reaches-70802.herokuapp.com.
 
-# Technologies
-This web page was made with:
+Adición creativa: Basta con cambiar el input para que se actualice el componente de navio y el historial.
+
+# Tecnologías
+Esta aplicación web fue hecha con:
 * Frameworks, libraries, databases
-  * React  
+  * React 
+  * Navio
+  * Node.js
+  * Express
+  * MongoDB (Atlas)
   
 * Languages
   * HTML 
@@ -12,32 +19,64 @@ This web page was made with:
   * JavaScript
   * JSX
   
-# How to run
-Open your CMD en clone the repositorie, using the next command:
+# Como correrlo localmente
+Abra su cmd y clone el repositorio usando el siguiente comando:
 ```
   git clone https://github.com/mjocampov/Datos.gov.git
 ```
 
-## Install dependencies
+## Instalar dependencias
+### Node + Express
+1. Acceda la carpeta desde el cmd.
+```
+  cd Datos.gov
+```
+2. Ejecute el siguiente comando y espere.
+```
+  npm install
+```
 ### React
-1. Access the ./front directory from your cmd
+1. Acceda a la carpeta ./front3 desde el cmd,
 ```
-  cd front
+  cd front3
 ```
-2. Run the next command and wait.
+2. Ejecute el siguiente comando y espere.
 ```
   npm install
 ```
 
-## Run the front-end
-1. Run the next command to start the front-end.
+## Ejecutar el back-end
+1. Vuelva a la carpeta principal (Datos.gov).
+```
+  cd ..
+```
+2. Ejecute el siguiente comando para correr el back-end.
 ```
   npm start
 ```
-2. Now you can go to localhost:3000 on your browser.
+3. Abra el navegador de su preferencia y pegue la siguiente linea:
+```
+ localhost:3001
+```
 
-# Author
+## Ejecutar el front-end
+1. Ejecute el siguiente comando para correr el front-end.
+```
+  npm start
+```
+2. Abra el navegador de su preferencia y pegue la siguiente linea:
+```
+ localhost:3000
+```
+
+## Base de datos
+La base de datos se encuentra hosteada en el cloud de MongoDB (Atlas).
+
+# Screenshots
+![alt text](http://url/to/img.png)
+
+# Autor
 María José Ocampo Vargas - https://github.com/mjocampov
 
-# MIT License
-You can find the license right here:https://github.com/mjocampov/Datos.gov/blob/master/LICENSE
+# Licencia MIT
+La licencia MIT se encuentra aquí: https://github.com/mjocampov/Datos.gov/blob/master/LICENSE
