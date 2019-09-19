@@ -37,27 +37,27 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if(this.state.dataset !== prevState.dataset) {
-    fetch(this.state.dataset)
-      .then(resp => resp.json())
-      .then(data => this.setState({
-        data:data,
-      }));
+      fetch(this.state.dataset)
+        .then(resp => resp.json())
+        .then(data => this.setState({
+          data:data,
+        }));
 
-    fetch("/link", {
-      method: "POST",
-      body: JSON.stringify({
-        link: this.state.dataset,
-      }), // data can be `string` or {object}!
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
+      fetch("/link", {
+          method: "POST",
+          body: JSON.stringify({
+            link: this.state.dataset,
+          }), // data can be `string` or {object}!
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
 
-    fetch("/link")
-      .then(resp => resp.json())
-      .then(history => this.setState({
-        history:history,
-      }));
+      fetch("/link")
+        .then(resp => resp.json())
+        .then(history => this.setState({
+          history:history,
+        }));
     }
   }
 
@@ -68,13 +68,13 @@ class App extends React.Component {
   render() {
     return(<div>
         <div className="row">
-          <div className="col-12">
+          <div className="col-8">
             <h2>Input</h2>
             <input type="text" value={this.state.dataset} onChange={this.handleChange} />
             <h2>Navio</h2>
             {this.renderNavio()}
             </div>
-          <div className="col-8">
+          <div className="col-4">
             <h2>History</h2>
             {this.renderHistory()}
           </div>
