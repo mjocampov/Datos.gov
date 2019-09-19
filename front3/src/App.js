@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import Link from "./Link.js";
 import Navio from "./Navio.js";
 
 
@@ -29,7 +28,7 @@ class App extends React.Component {
 
   renderHistory() {
     return this.state.history
-      .map(l => <Link link = {l}></Link>);
+      .map(l => <button className="btn btn-primary" key = {l._id} value = {l.link} onClick = {this.handleChange}>{l.link}</button>);
   }
 
   handleChange(event) {
@@ -53,13 +52,6 @@ class App extends React.Component {
         "Content-Type": "application/json"
       }
     });
-      /*.then(
-        fetch("/link")
-          .then(resp => resp.json())
-          .then(history => this.setState({
-            history:history,
-          }))
-          );*/
 
     fetch("/link")
       .then(resp => resp.json())
@@ -76,19 +68,16 @@ class App extends React.Component {
   render() {
     return(<div>
         <div className="row">
-          <div className="col-8">
+          <div className="col-12">
             <h2>Input</h2>
             <input type="text" value={this.state.dataset} onChange={this.handleChange} />
-            <h5>{this.state.dataset}</h5>
+            <h2>Navio</h2>
+            {this.renderNavio()}
             </div>
-          <div className="col-4">
+          <div className="col-8">
             <h2>History</h2>
             {this.renderHistory()}
           </div>
-        </div>
-        <div className="row">
-          <h2>Navio</h2>
-          {this.renderNavio()}
         </div>
       </div>);
   }
